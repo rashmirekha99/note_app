@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppStyles {
   static Color primaryColor = Color.fromARGB(255, 1, 107, 96);
@@ -18,4 +19,12 @@ class AppStyles {
     Colors.grey.shade100,
   
   ];
+
+  //TextStyles
+  static TextStyle mainTitle =
+      GoogleFonts.roboto(fontSize: 18.0, fontWeight: FontWeight.bold);
+  static TextStyle contenTitle =
+      GoogleFonts.nunito(fontSize: 16.0, fontWeight: FontWeight.normal);
+  static TextStyle date = GoogleFonts.roboto(fontSize: 13.0);
 }
+
