@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:note_app/screens/new_note_page.dart';
 import 'package:note_app/screens/note_read_page.dart';
 import 'package:note_app/styles/app_styles.dart';
 
@@ -66,7 +67,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddNewNote()));
+        },
         label: Text('Add New'),
         icon: Icon(Icons.add),
         backgroundColor: AppStyles.primaryColor,

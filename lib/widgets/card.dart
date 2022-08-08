@@ -25,7 +25,6 @@ Widget card(Function()? onTap, QueryDocumentSnapshot doc) {
                 maxLines: 5,
                 overflow: TextOverflow.ellipsis,
               ),
-              // Text(doc["date"],style: AppStyles.date,),
             ],
           )));
 }
