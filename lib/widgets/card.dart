@@ -17,10 +17,13 @@ Widget card(Function()? onTap, QueryDocumentSnapshot doc) {
               Text(
                 doc["title"],
                 style: AppStyles.mainTitle,
+                overflow: TextOverflow.ellipsis,
               ),
               Text(
                 doc["content"],
                 style: AppStyles.contenTitle,
+                maxLines: 5,
+                overflow: TextOverflow.ellipsis,
               ),
               // Text(doc["date"],style: AppStyles.date,),
             ],

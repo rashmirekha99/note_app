@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:note_app/screens/note_read_page.dart';
 import 'package:note_app/styles/app_styles.dart';
 
 import '../widgets/card.dart';
@@ -48,7 +49,12 @@ class _HomePageState extends State<HomePage> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2),
                     children: snapshot.data!.docs
-                        .map((note) => card(() {}, note))
+                        .map((note) => card(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => NoteRead(note)));
+                            }, note))
                         .toList(),
                   );
                 }
@@ -58,6 +64,13 @@ class _HomePageState extends State<HomePage> {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        label: Text('Add New'),
+        icon: Icon(Icons.add),
+        backgroundColor: AppStyles.primaryColor,
+        focusColor: AppStyles.secondaryColor,
       ),
     );
   }
